@@ -41,20 +41,17 @@ header ul li {
   cursor: pointer;
   position: relative;
   z-index: 1;
+  transform: scale(0.95);
+  transition: color 0.3s ease-in, transform 0.2s ease-in;
 }
-header ul li::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 0%;
-  height: 10px;
-  top: 60%;
-  background: #c31a42;
-  z-index: -1;
-  transition: width 0.3s ease-in-out;
+header ul li:hover {
+  color: #c31a42;
+  transform: scale(1);
 }
-header ul li:hover::before {
-  width: 80%;
+header.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .hero .name {
@@ -76,10 +73,10 @@ header ul li:hover::before {
 .hero .name:nth-child(1)::before {
   content: "";
   position: absolute;
-  display: block;
   height: 30px;
   background: #c31a42;
   width: 0%;
+  transform: translateX(0px);
   top: 65%;
   z-index: -1;
   animation-name: lineMove;
@@ -112,7 +109,7 @@ header ul li:hover::before {
     width: 0%;
   }
   100% {
-    width: 90%;
+    width: 270px;
   }
 }
 

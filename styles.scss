@@ -43,21 +43,21 @@ header {
       cursor: pointer;
       position: relative;
       z-index: 1;
-      &::before {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 0%;
-        height: 10px;
-        top: 60%;
-        background: #c31a42;
-        z-index: -1;
-        transition: width 0.3s ease-in-out;
-      }
-      &:hover::before {
-       width: 80%;
+      transform: scale(0.95);
+      transition: color 0.3s ease-in, transform 0.2s ease-in;
+
+      
+      &:hover {
+       color: #c31a42;
+       transform: scale(1);
+
       }
     }
+  }
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
   }
 
 }
@@ -84,10 +84,11 @@ header {
       &::before {
         content: "";
         position: absolute;
-        display: block;
+       
         height: 30px;
         background: #c31a42;
         width: 0%;
+        transform: translateX(0px);
         top: 65%;
         z-index: -1;
         animation-name: lineMove;
@@ -132,6 +133,6 @@ header {
   }
 
   100% {
-    width: 90%;
+    width: 270px;
   }
 }
