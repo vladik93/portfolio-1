@@ -15,8 +15,18 @@ body {
   
 }
 
+h1 {
+  font-family: "Fjalla One", sans-serif;
+  &.section-heading {
+    font-size: 8.6rem;
+    font-weight: 400;
+  
+  }
+}
+
 section {
   padding: 4rem 1.6rem;
+
 }
 
 ul {
@@ -26,6 +36,7 @@ ul {
 // HEADER
 
 header {
+  z-index: 50;
   height: 50px;
   background: #333;
   color: #fff;
@@ -135,4 +146,29 @@ header {
   100% {
     width: 270px;
   }
+}
+
+// ABOUT 
+
+.about {
+  .profile-wrapper {
+    height: 500px;
+    width: 100%;
+    background: red;
+    overflow: hidden;
+    position: relative;
+    background-image: url(./images/profile_2.webp);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    
+    background-position: 0 20%;
+    transition: background-position 0.3s ease-in, transform 5s ease-in;
+    transform: rotate(0deg);
+    &.moved {
+      background-position: 0% 0%;
+      transform: rotate(1deg);
+    }
+
+  }
+
 }
